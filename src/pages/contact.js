@@ -21,11 +21,10 @@ const SecondPage = ({ data }) => {
 
       {browser ? (
         <P5Wrapper sketch={sketch}>
-          <h2>contact</h2>
-          <ul style={{ textAlign: `center` }}>
+          <ul style={{ textAlign: `center`, marginTop: `2em` }}>
             {data.github.repositoryOwner.pinnedItems.edges.map(
               ({ node }, i) => (
-                <li key={i}>
+                <li key={i} style={{ textAlign: `center`, marginTop: `1.5em` }}>
                   <h4>{node.name}</h4>
                   <p>{node.description}</p>
                   <a
@@ -50,18 +49,15 @@ const SecondPage = ({ data }) => {
                 </li>
               )
             )}
-
-            <li style={{ userSelect: `text`, marginTop: `5em` }}>
-              If you'd like to get in touch, please email me -
+          </ul>
+          <div style={{ marginLeft: `25px` }}>
+            <h2 style={{ marginBottom: 0 }}>contact</h2>
+            <p style={{ fontSize: `16px`, marginBottom: `1em` }}>
+              If you'd like to get in touch, <br /> please email me - <br />
               bannatekle@icloud.com
-            </li>
-            <li
-              style={{
-                fontSize: `0.8rem`,
-                userSelect: `text`,
-              }}
-            >
-              (Illustrations from
+            </p>
+            <p style={{ fontSize: `12px`, marginBottom: `1em` }}>
+              Illustrations from
               <a
                 href="https://www.instagram.com/schmoulia/"
                 target="_blank"
@@ -69,18 +65,19 @@ const SecondPage = ({ data }) => {
               >
                 @schmoulia
               </a>
-              )
-            </li>
-          </ul>
-          <Link
-            to="/"
-            className="clickableText"
-            style={{ width: `100%`, position: `absolute`, textAlign: `center` }}
-          >
-            Go back to homepage
-          </Link>
-          <br />
-          <br />
+            </p>
+            <Link
+              to="/"
+              className="clickableText"
+              style={{
+                width: `95%`,
+                position: `absolute`,
+                textAlign: `center`,
+              }}
+            >
+              Back to homepage
+            </Link>
+          </div>
         </P5Wrapper>
       ) : null}
     </Layout>
